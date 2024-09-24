@@ -1,8 +1,14 @@
 # kaminari-os &nbsp; [![bluebuild build badge](https://github.com/thund3rpat/kaminari-os/actions/workflows/build.yml/badge.svg)](https://github.com/thund3rpat/kaminari-os/actions/workflows/build.yml)
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
+Kaminari (Japanese for "thunder") is a customized version of Bazzite that comes pre-configured with essential development tools. It builds on the core strengths of Bazzite, adding a unique layer of customization to deliver a lightning-fast, streamlined, and modern immutable desktop.
 
-After setup, it is recommended you update this README to describe your custom image.
+Kaminari is built using BlueBuild - a set of tools and documentation for creating custom images of image-based Linux distributions
+
+
+Preinstalled:
+- code
+- docker
+- rocm
 
 ## Installation
 
