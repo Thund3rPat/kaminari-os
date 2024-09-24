@@ -9,6 +9,12 @@ Preinstalled:
 - code
 - docker
 - rocm
+- Discord
+- Birdtray + Thunderbird
+- RNote
+- Obsidian
+- Signal
+- Zoom
 
 ## Installation
 
