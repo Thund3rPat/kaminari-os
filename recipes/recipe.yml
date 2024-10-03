@@ -37,11 +37,23 @@ modules:
       - rocm-opencl
       - rocm-smi
     remove:
+      - nvtop
+      - htop
       
   - type: default-flatpaks
     notify: true
     system:
       install:
+        - org.gnome.Calculator
+        - org.gnome.Calendar
+        - org.gnome.Snapshot
+        - org.gnome.Evince
+        - org.gnome.TextEditor
+        - org.gnome.Loupe
+        - org.videolan.VLC
+        - org.libreoffice.LibreOffice
+        - org.fedoraproject.MediaWriter
+        - org.gnome.baobab
         - com.discordapp.Discord
         - com.ulduzsoft.Birdtray
         - com.github.flxzt.rnote
@@ -56,6 +68,7 @@ modules:
         - com.mattjakeman.ExtensionManager
         - it.mijorus.gearlever
         - com.github.neithern.g4music
+        - io.github.dvlv.boxbuddyrs
       remove:
 
   - type: gnome-extensions
