@@ -16,11 +16,11 @@ modules:
 
 
   - type: fonts
-      fonts:
-        google-fonts:
-          - Fira Code
-          - JetBrains Mono
-          - Roboto
+    fonts:
+      google-fonts:
+        - Fira Code
+        - JetBrains Mono
+        - Roboto
 
 
   - type: rpm-ostree
