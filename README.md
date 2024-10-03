@@ -1,6 +1,6 @@
 # kaminari-os &nbsp; [![bluebuild build badge](https://github.com/thund3rpat/kaminari-os/actions/workflows/build.yml/badge.svg)](https://github.com/thund3rpat/kaminari-os/actions/workflows/build.yml)
 
-Kaminari (japanese for "thunder") is a customized version of Fedora Silverblue that comes pre-configured with essential tools for daily driving. 
+Kaminari (japanese for "thunder") is a customized version of Bluefin that comes pre-configured with essential tools for daily driving. 
 It builds on the core strengths of Fedora Silverblue, adding a unique layer of customization to deliver a lightning-fast, streamlined, and modern immutable desktop.
 
 Kaminari is built using BlueBuild - a set of tools and documentation for creating custom images of image-based Linux distributions.

@@ -4,8 +4,8 @@ name: kaminari-os
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-asus
-image-version: 40
+base-image: ghcr.io/ublue-os/bluefin-dx-asus
+image-version: latest
 
 # module configuration, executed in order
 modules:
@@ -14,74 +14,25 @@ modules:
       - source: system
         destination: /
 
+  # - type: rpm-ostree
+  #   repos:
+  #   install:
+  #   remove:
 
-  - type: fonts
-    fonts:
-      google-fonts:
-        - Fira Code
-        - JetBrains Mono
-        - Roboto
-
-
-  - type: rpm-ostree
-    repos:
-    install:
-      - code
-      - distrobox
-      - docker-ce
-      - docker-ce-cli
-      - containerd.io
-      - docker-buildx-plugin
-      - docker-compose-plugin
-      - rocm-hip
-      - rocm-opencl
-      - rocm-smi
-    remove:
-      - nvtop
-      - htop
-      
   - type: default-flatpaks
     notify: true
     system:
       install:
-        - org.gnome.Calculator
-        - org.gnome.Calendar
-        - org.gnome.Snapshot
-        - org.gnome.Evince
-        - org.gnome.TextEditor
-        - org.gnome.Loupe
-        - org.videolan.VLC
         - org.libreoffice.LibreOffice
-        - org.fedoraproject.MediaWriter
-        - org.gnome.baobab
         - com.discordapp.Discord
         - com.ulduzsoft.Birdtray
         - com.github.flxzt.rnote
         - md.obsidian.Obsidian
-        - org.mozilla.Thunderbird
         - org.signal.Signal
         - us.zoom.Zoom
-        - com.github.tchx84.Flatseal
-        - org.gnome.Extensions
-        - io.missioncenter.MissionCenter
-        - io.github.flattool.Warehouse
-        - com.mattjakeman.ExtensionManager
         - it.mijorus.gearlever
         - com.github.neithern.g4music
-        - io.github.dvlv.boxbuddyrs
-      remove:
-
-  - type: gnome-extensions
-    install:
-      - AppIndicator and KStatusNotifierItem Support
-      - Caffeine
-  
-
-  - type: systemd
-    system:
-      enabled:
-        - docker.socket
-
+      # remove:
 
   # this sets up the proper policy & signing files for signed images to work fully
   - type: signing
