@@ -4,8 +4,8 @@ name: kaminari-os
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/bazzite-gnome-asus
-image-version: latest
+base-image: ghcr.io/ublue-os/silverblue-asus
+image-version: 40
 
 # module configuration, executed in order
 modules:
@@ -14,10 +14,20 @@ modules:
       - source: system
         destination: /
 
+
+  - type: fonts
+      fonts:
+        google-fonts:
+          - Fira Code
+          - JetBrains Mono
+          - Roboto
+
+
   - type: rpm-ostree
     repos:
     install:
       - code
+      - distrobox
       - docker-ce
       - docker-ce-cli
       - containerd.io
@@ -29,7 +39,7 @@ modules:
     remove:
       
   - type: default-flatpaks
-    notify: true # Send notification after install/uninstall is finished (true/false)
+    notify: true
     system:
       install:
         - com.discordapp.Discord
@@ -39,7 +49,27 @@ modules:
         - org.mozilla.Thunderbird
         - org.signal.Signal
         - us.zoom.Zoom
+        - com.github.tchx84.Flatseal
+        - org.gnome.Extensions
+        - io.missioncenter.MissionCenter
+        - io.github.flattool.Warehouse
+        - com.mattjakeman.ExtensionManager
+        - it.mijorus.gearlever
+        - com.github.neithern.g4music
       remove:
+
+  - type: gnome-extensions
+    install:
+      - AppIndicator and KStatusNotifierItem Support
+      - Caffeine
+  
+
+  - type: systemd
+    system:
+      enabled:
+        - docker.socket
+
+
   # this sets up the proper policy & signing files for signed images to work fully
   - type: signing
 
