@@ -14,10 +14,11 @@ modules:
       - source: system
         destination: /
 
-  # - type: rpm-ostree
-  #   repos:
-  #   install:
-  #   remove:
+  - type: rpm-ostree
+    repos:
+    install:
+      - waydroid
+    remove:
 
   - type: default-flatpaks
     notify: true
